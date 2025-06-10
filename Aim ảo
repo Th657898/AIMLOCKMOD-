@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aimbot FF Hỗ Trợ</title>
+  <style>
+    body {
+      background: #0d0d0d;
+      color: #f1f1f1;
+      font-family: 'Arial', sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: #00ff99;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    .option {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 15px 20px;
+      margin-bottom: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    label {
+      font-size: 1.2rem;
+    }
+    input[type="checkbox"] {
+      width: 24px;
+      height: 24px;
+    }
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      font-size: 1.2rem;
+      background-color: #00cc66;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #00994d;
+    }
+    #message {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🎯 Aimbot FF Hỗ Trợ</h1>
+
+<div class="option">
+  <label for="toggle-all"><strong>Bật / Tắt tất cả</strong></label>
+  <input type="checkbox" id="toggle-all">
+</div>
+
+<div class="option">
+  <label for="aimbot-basic">Aimbot cơ bản</label>
+  <input type="checkbox" class="func" id="aimbot-basic">
+</div>
+
+<div class="option">
+  <label for="aimbot-pro">Aimbot Pro</label>
+  <input type="checkbox" class="func" id="aimbot-pro">
+</div>
+
+<div class="option">
+  <label for="fix-lech-tam">Fix lệch tâm</label>
+  <input type="checkbox" class="func" id="fix-lech-tam">
+</div>
+
+<div class="option">
+  <label for="fix-rung-tam">Fix rung tâm</label>
+  <input type="checkbox" class="func" id="fix-rung-tam">
+</div>
+
+<div class="option">
+  <label for="headshot">Hỗ trợ Headshot</label>
+  <input type="checkbox" class="func" id="headshot">
+</div>
+
+<div class="option">
+  <label for="auto-aim">Tự động căn tâm</label>
+  <input type="checkbox" class="func" id="auto-aim">
+</div>
+
+<button class="btn" onclick="activate()">✅ Kích hoạt Aimbot</button>
+
+<div id="message">🎯 Đã kích hoạt thành công các tính năng Aimbot!</div>
+
+<script>
+  const toggleAll = document.getElementById("toggle-all");
+  const checkboxes = document.querySelectorAll(".func");
+
+  toggleAll.addEventListener("change", () => {
+    checkboxes.forEach(cb => cb.checked = toggleAll.checked);
+  });
+
+  checkboxes.forEach(cb => {
+    cb.addEventListener("change", () => {
+      toggleAll.checked = [...checkboxes].every(c => c.checked);
+    });
+  });
+
+  function activate() {
+    document.getElementById("message").style.display = "block";
+    setTimeout(() => {
+      document.getElementById("message").style.display = "none";
+    }, 6000);
+  }
+</script>
+
+</body>
+</html>
